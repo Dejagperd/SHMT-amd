@@ -4,19 +4,19 @@
 FROM tensorflow/tensorflow:2.9.2-gpu AS BASE_BUILD
 
 # edgetpu-compiler setup
-FROM BASE_BUILD AS BUILD1
-RUN apt-get update && \
-    apt-get install --no-install-recommends -y \
-    gnupg \
-    ca-certificates \
-    curl \
-    apt-utils \
-    apt-transport-https && \
-    curl https://packages.cloud.google.com/apt/doc/apt-key.gpg \
-    | apt-key add - && \
-    echo "deb https://packages.cloud.google.com/apt coral-edgetpu-stable main" \
-    | tee /etc/apt/sources.list.d/coral-edgetpu.list && \
-    apt-get update && apt-get install -y edgetpu-compiler
+#FROM BASE_BUILD AS BUILD1
+#RUN apt-get update && \
+#    apt-get install --no-install-recommends -y \
+#    gnupg \
+#    ca-certificates \
+#    curl \
+#    apt-utils \
+#    apt-transport-https && \
+#    curl https://packages.cloud.google.com/apt/doc/apt-key.gpg \
+#    | apt-key add - && \
+#    echo "deb https://packages.cloud.google.com/apt coral-edgetpu-stable main" \
+#    | tee /etc/apt/sources.list.d/coral-edgetpu.list && \
+#    apt-get update && apt-get install -y edgetpu-compiler
 
 # install opencv
 FROM BUILD1 AS BUILD2
