@@ -5,7 +5,7 @@ int snapTransformSize(int dataSize)
     int hiBit;
     unsigned int lowPOT, hiPOT;
  
-    dataSize = iAlignUp(dataSize, 16);
+    dataSize = iAlignUp(dataSize, 64); // Align to 64-byte boundary for AMD GPUs
  
     for (hiBit = 31; hiBit >= 0; hiBit--)
         if (dataSize & (1U << hiBit))
