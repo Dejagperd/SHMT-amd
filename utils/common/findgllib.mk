@@ -1,6 +1,6 @@
-# Adjust paths for AMD GPU drivers on Ubuntu
-GLPATH := /usr/lib/x86_64-linux-gnu
-GLLINK := -L/usr/lib/x86_64-linux-gnu
+# Adjust paths for AMD GPU drivers on Arch Linux
+GLPATH := /usr/lib
+GLLINK := -L/usr/lib
 
 # find libGL, libGLU 
 GLLIB  := $(shell find -L $(GLPATH) -name libGL.so  -print 2>/dev/null)
